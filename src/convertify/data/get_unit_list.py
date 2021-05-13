@@ -4,8 +4,6 @@ import pathlib
 
 csv_file_path = pathlib.Path(__file__).parent.parent.resolve()
 
-print("PATH: ", csv_file_path)
-
 
 def get_units():
     units = {}
