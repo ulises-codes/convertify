@@ -12,7 +12,7 @@ setup(
             'convertify-py=convertify.__main__:main'
         ]
     },
-    version="0.0.7",
+    version="0.0.8",
     description="A small CLI tool to convert units.",
     long_description=long_description,
     long_description_content_type="text/markdown",
