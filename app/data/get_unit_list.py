@@ -4,7 +4,7 @@ import csv
 def get_units():
     units = {}
 
-    with open('units.csv') as unit_file:
+    with open('app/resources/data.csv') as unit_file:
         unit_dict = csv.DictReader(unit_file)
         for unit in unit_dict:
             conversion_type = unit['conversion_type'].lower().replace(' ', '_')

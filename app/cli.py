@@ -1,11 +1,6 @@
 import logging
 import argparse
-from fractions import Fraction
-from get_units import get_units
-
-UNIT_MAP = get_units()
-
-UNIT_TYPES = [*UNIT_MAP]
+from app.data.convert import UNIT_TYPES, UNIT_MAP, convert
 
 parser = argparse.ArgumentParser(description="Convert commonly used units.")
 subparsers = parser.add_subparsers(
@@ -57,14 +52,7 @@ def validate_args(from_unit=str, to=str):
         logging.critical(f"Cannot convert from {from_unit} to {to}.")
 
 
-def convert(unit_type=str, from_unit=str, to=str, amount=float):
-    multiplier = UNIT_MAP[unit_type][from_unit][to]['multiply_by']
-    fraction = Fraction(multiplier)
-
-    return amount * fraction.numerator / fraction.denominator
-
-
-def main():
+def cli():
     parsed = {**vars(args)}
 
     validate_args(from_unit=parsed['from'], to=parsed['to'])
@@ -80,4 +68,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    cli()
