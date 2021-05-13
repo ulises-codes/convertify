@@ -1,10 +1,16 @@
 import csv
+import pathlib
+
+
+csv_file_path = pathlib.Path(__file__).parent.parent.resolve()
+
+print("PATH: ", csv_file_path)
 
 
 def get_units():
     units = {}
 
-    with open('app/resources/data.csv') as unit_file:
+    with open(f'{csv_file_path}/resources/data.csv') as unit_file:
         unit_dict = csv.DictReader(unit_file)
         for unit in unit_dict:
             conversion_type = unit['conversion_type'].lower().replace(' ', '_')

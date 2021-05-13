@@ -1,5 +1,5 @@
 from fractions import Fraction
-from app.data.get_unit_list import get_units
+from .get_unit_list import get_units
 
 UNIT_MAP = get_units()
 

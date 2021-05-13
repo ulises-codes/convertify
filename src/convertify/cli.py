@@ -1,6 +1,6 @@
 import logging
 import argparse
-from app.data.convert import UNIT_TYPES, UNIT_MAP, convert
+from .data.convert import UNIT_TYPES, UNIT_MAP, convert
 
 parser = argparse.ArgumentParser(description="Convert commonly used units.")
 subparsers = parser.add_subparsers(
